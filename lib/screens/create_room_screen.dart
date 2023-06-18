@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:xoxo_battles/resources/socket_methods.dart';
 import 'package:xoxo_battles/responsive/responsive.dart';
 import 'package:xoxo_battles/widgets/custom_button.dart';
 import 'package:xoxo_battles/widgets/custom_text.dart';
@@ -14,6 +15,7 @@ class CreateRoomScreen extends StatefulWidget {
 
 class _CreateRoomScreenState extends State<CreateRoomScreen> {
   final TextEditingController _nameController = TextEditingController();
+  final SocketMethods _socketMethods = SocketMethods();
 
   @override
   void dispose() {
@@ -49,7 +51,11 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
               SizedBox(
                 height: size.height * 0.045,
               ),
-              CustomButton(onTap: () {}, text: 'Create')
+              CustomButton(
+                  onTap: () => _socketMethods.createRoom(
+                        _nameController.text,
+                      ),
+                  text: 'Create')
             ],
           ),
         ),
