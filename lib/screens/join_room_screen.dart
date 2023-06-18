@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../responsive/responsive.dart';
 import '../widgets/custom_button.dart';
 import '../widgets/custom_text.dart';
-import '../widgets/custom_textfiled.dart';
+import '../widgets/custom_textfield.dart';
 
 class JoinRoomScreen extends StatefulWidget {
   static String routeName = '/join-room';
@@ -45,14 +45,14 @@ class _JoinRoomScreenState extends State<JoinRoomScreen> {
               SizedBox(
                 height: size.height * 0.08,
               ),
-              CustomTextFiled(
+              CustomTextField(
                 controller: _nameController,
                 hintText: 'Enter your nickname',
               ),
               const SizedBox(
                 height: 20,
               ),
-              CustomTextFiled(
+              CustomTextField(
                 controller: _gameIdController,
                 hintText: 'Enter Game ID',
               ),

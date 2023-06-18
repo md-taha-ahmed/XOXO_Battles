@@ -3,7 +3,7 @@ import 'package:xoxo_battles/resources/socket_methods.dart';
 import 'package:xoxo_battles/responsive/responsive.dart';
 import 'package:xoxo_battles/widgets/custom_button.dart';
 import 'package:xoxo_battles/widgets/custom_text.dart';
-import 'package:xoxo_battles/widgets/custom_textfiled.dart';
+import 'package:xoxo_battles/widgets/custom_textfield.dart';
 
 class CreateRoomScreen extends StatefulWidget {
   static String routeName = '/create-room';
@@ -16,6 +16,12 @@ class CreateRoomScreen extends StatefulWidget {
 class _CreateRoomScreenState extends State<CreateRoomScreen> {
   final TextEditingController _nameController = TextEditingController();
   final SocketMethods _socketMethods = SocketMethods();
+
+  @override
+  void initState() {
+    super.initState();
+    _socketMethods.createRoomSuccessListener(context);
+  }
 
   @override
   void dispose() {
@@ -44,7 +50,7 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
               SizedBox(
                 height: size.height * 0.08,
               ),
-              CustomTextFiled(
+              CustomTextField(
                 controller: _nameController,
                 hintText: 'Enter your nickname',
               ),

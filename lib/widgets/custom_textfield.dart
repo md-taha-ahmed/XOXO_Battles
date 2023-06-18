@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:xoxo_battles/utils/colors.dart';
 
-class CustomTextFiled extends StatelessWidget {
+class CustomTextField extends StatelessWidget {
   final TextEditingController controller;
   final String hintText;
 
-  const CustomTextFiled({
+  const CustomTextField({
     super.key,
     required this.controller,
     required this.hintText,
